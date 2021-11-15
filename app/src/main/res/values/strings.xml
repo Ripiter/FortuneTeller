@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FortuneTeller</string>
+    <string name="press_btn_text">Press me</string>
+</resources>
