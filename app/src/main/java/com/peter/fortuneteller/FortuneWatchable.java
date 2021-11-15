@@ -1,6 +1,6 @@
 package com.peter.fortuneteller;
 
-public interface JokeWatcher {
-    public void update(String joke);
+public interface FortuneWatchable {
+    public void update(Fortune fortune);
     public void errorUpdate(String errorMessage);
 }

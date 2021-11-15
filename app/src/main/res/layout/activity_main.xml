@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/joke_text"
+        android:id="@+id/fortune_text"
         android:layout_width="275dp"
         android:layout_height="418dp"
         android:text="TextView"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.143" />
 
     <Button
-        android:id="@+id/getjoke_btn"
+        android:id="@+id/getfortune_btn"
         android:layout_width="228dp"
         android:layout_height="101dp"
         android:text="@string/press_btn_text"

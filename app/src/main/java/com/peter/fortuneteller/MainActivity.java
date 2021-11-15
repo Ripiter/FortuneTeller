@@ -7,24 +7,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements  JokeWatcher {
+public class MainActivity extends AppCompatActivity implements FortuneWatchable {
 
-    TextView jokeText;
+    TextView fortuneText;
     ApiCaller caller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        jokeText = findViewById(R.id.joke_text);
+        fortuneText = findViewById(R.id.fortune_text);
 
         caller = new ApiCaller();
 
         caller.addListener(this);
 
-        Button btn = findViewById(R.id.getjoke_btn);
+        Button btn = findViewById(R.id.getfortune_btn);
         btn.setOnClickListener(this::getJokePressed);
-
-
 
         caller.getRequest(MainActivity.this);
     }
@@ -34,12 +32,12 @@ public class MainActivity extends AppCompatActivity implements  JokeWatcher {
     }
 
     @Override
-    public void update(String joke) {
-        jokeText.setText(joke);
+    public void update(Fortune fortune) {
+        fortuneText.setText(fortune.getFortune());
     }
 
     @Override
     public void errorUpdate(String errorMessage) {
-        jokeText.setText(errorMessage);
+        fortuneText.setText(errorMessage);
     }
 }
